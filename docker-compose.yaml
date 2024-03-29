@@ -1,0 +1,15 @@
+services:
+
+  client:
+    build: ./client/
+    container_name: client
+    ports:
+      - 5001:80
+    depends_on:
+      - api
+
+  api:
+    container_name: api
+    build: ./flask-api/
+    ports:
+      - 5000:5000
